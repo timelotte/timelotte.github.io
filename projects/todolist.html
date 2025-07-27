@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Timelotte: Todolist</title>
+  
+  <link rel="stylesheet" type="text/css" href="/styles/base.css" />
+  <link rel="stylesheet" type="text/css" href="/styles/timelotte.css" />
+  <link rel="stylesheet" type="text/css" href="/styles/todolist.css" />
+</head>
+<body>
+  <header id="tl-header"></header>
+  <script async src="/components/header.js"></script>
+  
+  <main id="tl-content">
+    <noscript>⚠️ This website needs JavaScript to function properly.</noscript>
+    
+    <input id="todo-control-switch" type="checkbox" class="tl-hidden" />
+    <div id="todo-backdrop"></div>
+    <section id="todo-control">
+      <div class="todo-heading">
+        <h1>Add Task</h1>
+        <label for="todo-control-switch">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </label>
+      </div>
+      <div class="tlc-input tlc-text" data-type="text" data-title="Task Title" data-placeholder="Enter task" data-id="task-title"></div>
+      <div class="tlc-input">
+        <label for="task-date" class="tlc-input-title">Date</label>
+        <div class="tlc-input-wrapper">
+          <input id="task-date" type="date" class="tlc-input-content" />
+        </div>
+      </div>
+      <button id="task-submit" class="tlc-button tlc--primary" style="margin: 0 var(--m-2); width: calc(100% - (2 * var(--m-2)));">Add Task</button>
+    </section>
+    
+    <section id="todo-view">
+      <h1>Your Tasks</h1>
+      <label id="todo-control-label1" for="todo-control-switch" class="tlc-button tlc--primary">Add Task</label>
+      <div id="todo-filter-wrapper">
+        <h2 style="font-size: var(--sz-3)">Filter</h2>
+        <div id="todo-filter">
+          <div class="tlc-input tl-halfwidth">
+            <label for="filter-status" class="tlc-input-title">Filter Status</label>
+            <div class="tlc-input-wrapper">
+              <select id="filter-status" class="tlc-input-content">
+                <option value="all">All</option>
+                <option value="done">Done</option>
+                <option value="notdone">Not Done</option>
+              </select>
+            </div>
+          </div>
+          <div class="tlc-input tl-halfwidth">
+            <label for="filter-date" class="tlc-input-title">Filter Date</label>
+            <div class="tlc-input-wrapper">
+              <input id="filter-date" type="date" class="tlc-input-content" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul id="todo-view-list"></ul>
+    </section>
+  </main>
+  
+  <script src="/components/text-input.js"></script>
+  <script src="/scripts/todolist.js"></script>
+</body>
+</html>

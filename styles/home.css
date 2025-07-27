@@ -1,0 +1,6 @@
+.TL_title {
+  font-size: clamp(2rem, 10vw, 6rem);
+  text-align: left;
+  width: 100vw;
+  margin: 0;
+}
